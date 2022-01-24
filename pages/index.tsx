@@ -5,7 +5,6 @@ import { Skills } from '../components/Skills/Skills'
 import { Contact } from '../components/Contact/contact'
 import { About } from '../components/About/About'
 
-import '../styles/index.css'
 
 const IndexPage: NextPage = () => {
 
