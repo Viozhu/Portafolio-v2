@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 html {
+  margin: 0px !important;
   scroll-behavior: smooth;
 }
 
 body {
-  margin: 0px;
+  margin: 0px !important;
   scroll-behavior: smooth;
 }
