@@ -12,28 +12,48 @@ export const Navbar = ({ isEnglish, setIsEnglish }: any) => {
             </div>
             <div className={BUTTON_CONTAINER}>
                 <div>
-                    <a href="#about"
+                    <button onClick={() => {
+                        window.scrollBy({
+                            top: 700,
+                            behavior: 'smooth'
+                        });
+                    }}
                         className={A_STYLE}>
                         About
-                    </a>
+                    </button>
                 </div>
                 <div>
-                    <a href="#portafolio"
+                    <button onClick={() => {
+                        window.scrollBy({
+                            top: 1400,
+                            behavior: 'smooth'
+                        });
+                    }}
                         className={A_STYLE}>
                         Portafolio
-                    </a>
+                    </button>
                 </div>
                 <div>
-                    <a href="#skills"
+                    <button onClick={() => {
+                        window.scrollBy({
+                            top: 1950,
+                            behavior: 'smooth'
+                        });
+                    }}
                         className={A_STYLE}>
                         Skills
-                    </a>
+                    </button>
                 </div>
                 <div>
-                    <a href="#contact"
+                    <button onClick={() => {
+                        window.scrollBy({
+                            top: 2600,
+                            behavior: 'smooth'
+                        });
+                    }}
                         className={A_STYLE}>
                         Contact
-                    </a>
+                    </button>
                 </div>
                 <div>
                     <button className={A_STYLE} onClick={() => setIsEnglish(!isEnglish)}>{isEnglish ? 'EN' : 'ES'}</button>
