@@ -4,7 +4,7 @@ export const A_STYLE =
 export const NAVBAR = "flex items-center justify-between flex-wrap p-6";
 
 export const NAV_TITLE_CONTIANER =
-  "flex items-center flex-shrink-0 text-white mr-6";
+  "flex items-center flex-shrink-0 text-white pr-6";
 
 export const NAV_TITLE = "font-semibold text-xl tracking-tight";
 
