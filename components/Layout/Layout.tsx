@@ -18,7 +18,7 @@ const Layout = ({
 }: Props) => {
 
   return (
-    <div className=' bg-black'>
+    <div className='bg-black -m-2'>
       <Head>
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
