@@ -35,6 +35,7 @@ const IndexPage: NextPage = () => {
             <h1 className="text-4xl text-white">{isEnglish ? 'About me' : 'Sobre mí'}</h1>
           </div>
           <About isEnglish={isEnglish} />
+
         </div>
         {/* Portafolio */}
         <div className="mt-96 mb-40">
