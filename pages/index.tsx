@@ -11,7 +11,7 @@ const IndexPage: NextPage = () => {
   const [isEnglish, setIsEnglish] = React.useState(true)
 
   return (
-    <div className='bg-black m-0'>
+    <div className='bg-black'>
       <Layout title="Jorge Ignacio Garay" isEnglish={isEnglish} setIsEnglish={setIsEnglish}>
         <div className='flex flex-col h-screen justify-between'>
           <div className='flex justify-center h-full items-center'>
