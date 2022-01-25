@@ -19,7 +19,7 @@ export const Navbar = ({ isEnglish, setIsEnglish }: any) => {
                         });
                     }}
                         className={A_STYLE}>
-                        About
+                        {isEnglish ? 'About' : 'Sobre mí'}
                     </button>
                 </div>
                 <div>
@@ -52,11 +52,11 @@ export const Navbar = ({ isEnglish, setIsEnglish }: any) => {
                         });
                     }}
                         className={A_STYLE}>
-                        Contact
+                        {isEnglish ? 'Contact' : 'Contacto'}
                     </button>
                 </div>
                 <div>
-                    <button className={A_STYLE} onClick={() => setIsEnglish(!isEnglish)}>{isEnglish ? 'EN' : 'ES'}</button>
+                    <button className={A_STYLE} onClick={() => setIsEnglish(!isEnglish)}>{isEnglish ? 'ES' : 'EN'}</button>
                 </div>
             </div>
         </nav>

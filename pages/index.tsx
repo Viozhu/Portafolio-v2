@@ -4,6 +4,7 @@ import { NextPage } from 'next'
 import { Skills } from '../components/Skills/Skills'
 import { Contact } from '../components/Contact/contact'
 import { About } from '../components/About/About'
+import { Portafolio } from '../components/Portafolio/Portafolio'
 
 
 const IndexPage: NextPage = () => {
@@ -44,6 +45,7 @@ const IndexPage: NextPage = () => {
         <h1 className="text-4xl text-white text-center">Portafolio</h1>
       </div>
       <div className="flex mx-auto ml-40 mr-40 mt-12 justify-center align-middle items-center">
+        <Portafolio />
       </div>
       <div >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className='align-bottom self-end'>

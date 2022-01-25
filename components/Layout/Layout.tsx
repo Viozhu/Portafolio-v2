@@ -18,19 +18,19 @@ const Layout = ({
 }: Props) => {
 
   return (
-    <div className='bg-black -m-2'>
+    <div className='bg-black -m-2 overflow-x-hidden w-auto'>
       <Head>
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className='w-full h-full z-50 sticky'>
+      <div className='w-auto h-full z-50 sticky'>
         <Navbar isEnglish={isEnglish} setIsEnglish={setIsEnglish} />
         {children}
       </div>
       <Particles
-        className='z-0'
+        className='z-0 w-auto'
         params={{
           "particles": {
             "number": {
