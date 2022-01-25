@@ -26,11 +26,9 @@ const IndexPage: NextPage = () => {
         </div>
         {/* About */}
         <div className="bg-orange-800">
-          <a id="about" className="text-transparent">
-            a
-          </a>
+          <a id="about" className="text-transparent" />
         </div>
-        <div className='bg-orange-800 h-auto py-16 flex flex-col align-middle items-center justify-center'>
+        <div className='bg-orange-800 h-auto py-4 flex flex-col align-middle items-center justify-center'>
           <div className='flex justify-center'>
             <h1 className="text-4xl text-white">{isEnglish ? 'About me' : 'Sobre mí'}</h1>
           </div>
@@ -43,9 +41,7 @@ const IndexPage: NextPage = () => {
             <path fill="#ff5500" fillOpacity="1" d="M0,192L48,181.3C96,171,192,149,288,165.3C384,181,480,235,576,229.3C672,224,768,160,864,154.7C960,149,1056,203,1152,192C1248,181,1344,107,1392,69.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
             <path fill="rgb(154 52 18)" fillOpacity="1" d="M0,96L48,133.3C96,171,192,245,288,234.7C384,224,480,128,576,101.3C672,75,768,117,864,122.7C960,128,1056,96,1152,106.7C1248,117,1344,171,1392,197.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
           </svg>
-          <a id="portafolio" className="text-transparent">
-            a
-          </a>
+          <a id="portafolio" className="text-transparent" />
           <h1 className="text-4xl text-white text-center">Portafolio</h1>
         </div>
         <div className="flex mx-auto ml-40 mr-40 mt-12 justify-center align-middle items-center">
@@ -57,11 +53,9 @@ const IndexPage: NextPage = () => {
           </svg>
         </div>
         <div className="bg-indigo-400">
-          <a id="skills" className="text-transparent">
-            a
-          </a>
+          <a id="skills" className="text-transparent" />
         </div>
-        <div className='bg-indigo-400 h-auto py-16 flex flex-col align-middle items-center justify-center'>
+        <div className='bg-indigo-400 h-auto py-4 flex flex-col align-middle items-center justify-center'>
           <div className='flex justify-center'>
             {/* Skills */}
             <h1 className="text-4xl text-white">Skills</h1>
@@ -75,9 +69,7 @@ const IndexPage: NextPage = () => {
           <path fill="rgb(129 140 248)" fillOpacity="1" d="M0,96L48,133.3C96,171,192,245,288,234.7C384,224,480,128,576,101.3C672,75,768,117,864,122.7C960,128,1056,96,1152,106.7C1248,117,1344,171,1392,197.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
         </svg>
         {/* Contact */}
-        <a id="contact" className="text-transparent">
-          a
-        </a>
+        <a id="contact" className="text-transparent" />
         <h1 className="text-4xl text-white text-center">{isEnglish ? 'Contact' : 'Contacto'}</h1>
         <h3>Connect with me:</h3>
         <Contact />
