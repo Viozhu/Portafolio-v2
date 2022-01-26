@@ -6,12 +6,12 @@ interface Props {
 
 export const About = ({ isEnglish }: Props) => {
     return (
-        <div className="flex mx-auto ml-40 mr-40 mt-12 justify-center align-middle items-center">
+        <div className="flex mx-auto mt-12 justify-center align-middle items-center sm:ml-40 sm:mr-40 mr-12 ml-12">
             <img
-                className="rounded-full"
+                className="rounded-full hidden sm:flex mr-10 "
                 src="https://avatars.githubusercontent.com/u/76756295?v=4"
             />
-            <div className='ml-10 space-y-10'>
+            <div className='space-y-10'>
                 <p className="text-xl text-white text-center">
                     {isEnglish ? `Full-stack web designer and developer, front-end lover. I trained in
                 Henry as a full-stack developer, creating projects that were real
@@ -27,7 +27,8 @@ export const About = ({ isEnglish }: Props) => {
                 <p className='text-white text-xl'>
                     {isEnglish ? `Job Experience:` : `Experiencia Laboral:`}
 
-                    <ul className='ml-44'>
+                    <ul>
+                        <br />
                         <li>◈ Lilab - 6 {isEnglish ? 'Months' : 'Meses'} • Front-End Developer</li>
                         <li>◈ ivoy - {isEnglish ? 'Current' : 'Actual'} • Full-Stack Developer</li>
                     </ul>

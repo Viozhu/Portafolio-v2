@@ -1,5 +1,5 @@
 import React from 'react'
-import { A_STYLE, NAVBAR, NAV_TITLE_CONTIANER, NAV_TITLE, BUTTON_CONTAINER } from './styles'
+import { A_STYLE, NAVBAR, NAV_TITLE_CONTIANER, NAV_TITLE, BUTTON_CONTAINER, BUTTON_LENGUAGE } from './styles'
 
 export const Navbar = ({ isEnglish, setIsEnglish }: any) => {
 
@@ -36,7 +36,7 @@ export const Navbar = ({ isEnglish, setIsEnglish }: any) => {
                 <div>
                     <button onClick={() => {
                         window.scrollBy({
-                            top: 1950,
+                            top: 2520,
                             behavior: 'smooth'
                         });
                     }}
@@ -44,10 +44,11 @@ export const Navbar = ({ isEnglish, setIsEnglish }: any) => {
                         Skills
                     </button>
                 </div>
+
                 <div>
                     <button onClick={() => {
                         window.scrollBy({
-                            top: 2600,
+                            top: 3200,
                             behavior: 'smooth'
                         });
                     }}
@@ -56,9 +57,10 @@ export const Navbar = ({ isEnglish, setIsEnglish }: any) => {
                     </button>
                 </div>
                 <div>
-                    <button className={A_STYLE} onClick={() => setIsEnglish(!isEnglish)}>{isEnglish ? 'ES' : 'EN'}</button>
+                    <button className={BUTTON_LENGUAGE} onClick={() => setIsEnglish(!isEnglish)}>{isEnglish ? 'ES' : 'EN'}</button>
                 </div>
             </div>
+
         </nav>
     )
 }
