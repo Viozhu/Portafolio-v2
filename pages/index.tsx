@@ -32,7 +32,7 @@ const IndexPage: NextPage = () => {
       {/* Portafolio */}
       <div className="sm:mb-40 mb-0">
         {OrageDownWave}
-        <h1 className="text-4xl text-white text-center">Portafolio</h1>
+        <h1 className="text-4xl text-white text-center mt-12">Portafolio</h1>
       </div>
       <div className="flex mx-auto ml-40 mr-40 mt-12 justify-center align-middle items-center">
         <Portafolio />
