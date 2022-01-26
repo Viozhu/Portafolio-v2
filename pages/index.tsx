@@ -30,7 +30,7 @@ const IndexPage: NextPage = () => {
         <About isEnglish={isEnglish} />
       </div>
       {/* Portafolio */}
-      <div className="mb-40">
+      <div className="sm:mb-40 mb-0">
         {OrageDownWave}
         <h1 className="text-4xl text-white text-center">Portafolio</h1>
       </div>
