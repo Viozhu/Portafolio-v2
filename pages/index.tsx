@@ -32,7 +32,9 @@ const IndexPage: NextPage = () => {
           <img
             src="https://i.imgur.com/KuVCnhI.png"
             alt="astronaut"
-            className="animate-bounce-slow hover:animate-spin w-[500px] h-[500px]  hue-rotate-15 saturate-150 "
+            width={500}
+            height={500}
+            className="animate-bounce-slow hover:animate-spin   hue-rotate-15 saturate-150 hidden lg:block "
           />
         </div>
         <div className="-mt-60">{OrangeUpWave}</div>
