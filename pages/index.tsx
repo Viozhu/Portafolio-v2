@@ -22,7 +22,7 @@ const IndexPage: NextPage = () => {
       setIsEnglish={setIsEnglish}
     >
       <div className="flex flex-col justify-between">
-        <div className="flex justify-center w-auto h-[90vh] space-x-[400px] items-center">
+        <div className="flex justify-center w-auto h-screen space-x-80 items-center">
           <h1 className="text-white text-3xl italic">
             {isEnglish ? "Hi, Im Jorge Ignacio" : "Hola, soy Jorge Ignacio"}{" "}
             <h2 className="text-white italic text-2xl text-center">
@@ -37,7 +37,7 @@ const IndexPage: NextPage = () => {
             className="animate-bounce-slow hover:animate-spin   hue-rotate-15 saturate-150 hidden lg:block "
           />
         </div>
-        <div className="-mt-60">{OrangeUpWave}</div>
+        <div className="-mt-80">{OrangeUpWave}</div>
       </div>
       {/* About */}
       <div
