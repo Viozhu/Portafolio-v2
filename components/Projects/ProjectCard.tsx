@@ -9,7 +9,7 @@ interface ProjectCardProps {
     techStack?: string[];
 }
 
-const ProjectCard = ({ title, description, img, link, techStack = [] }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, img, techStack = [] }: ProjectCardProps) => {
     const [imageError, setImageError] = React.useState(false);
     const [imageLoaded, setImageLoaded] = React.useState(false);
 
