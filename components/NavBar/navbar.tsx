@@ -1,20 +1,24 @@
 import React from "react";
+import { useTranslation } from "next-i18next";
+import LanguageSwitcher from "../LanguageSwitcher";
 import {
   A_STYLE,
   NAVBAR,
   NAV_TITLE_CONTIANER,
   NAV_TITLE,
   BUTTON_CONTAINER,
-  BUTTON_LENGUAGE,
 } from "./styles";
 
-export const Navbar = ({ isEnglish, setIsEnglish }: any) => {
-  const handleScrollClick = (sectionId) => {
+export const Navbar = () => {
+  const { t } = useTranslation("common");
+
+  const handleScrollClick = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   };
+
   return (
     <nav className={NAVBAR}>
       <div className={NAV_TITLE_CONTIANER}>
@@ -23,52 +27,39 @@ export const Navbar = ({ isEnglish, setIsEnglish }: any) => {
       <div className={BUTTON_CONTAINER}>
         <div>
           <button
-            onClick={() => {
-              handleScrollClick("about");
-            }}
+            onClick={() => handleScrollClick("about")}
             className={A_STYLE}
           >
-            {isEnglish ? "About" : "Sobre mí"}
+            {t("about")}
           </button>
         </div>
         <div>
           <button
-            onClick={() => {
-              handleScrollClick("portafolio");
-            }}
+            onClick={() => handleScrollClick("portafolio")}
             className={A_STYLE}
           >
-            Portafolio
+            {t("portfolio")}
           </button>
         </div>
         <div>
           <button
-            onClick={() => {
-              handleScrollClick("skills");
-            }}
+            onClick={() => handleScrollClick("skills")}
             className={A_STYLE}
           >
-            Skills
+            {t("skills")}
           </button>
         </div>
 
         <div>
           <button
-            onClick={() => {
-              handleScrollClick("contact");
-            }}
+            onClick={() => handleScrollClick("contact")}
             className={A_STYLE}
           >
-            {isEnglish ? "Contact" : "Contacto"}
+            {t("contact")}
           </button>
         </div>
         <div>
-          <button
-            className={BUTTON_LENGUAGE}
-            onClick={() => setIsEnglish(!isEnglish)}
-          >
-            {isEnglish ? "ES" : "EN"}
-          </button>
+          <LanguageSwitcher />
         </div>
       </div>
     </nav>

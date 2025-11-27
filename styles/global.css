@@ -1,6 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-space-dark text-white font-sans;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-space-dark;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-space-light rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-space-accent;
+}
 
 html {
   margin: 0px !important;

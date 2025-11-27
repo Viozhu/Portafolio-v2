@@ -1,86 +1,88 @@
 import * as React from "react";
 import Layout from "../components/Layout/Layout";
 import { NextPage } from "next";
-import { Skills } from "../components/Skills/Skills";
+import { GetStaticProps } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
+import Hero from "../components/Hero/Hero";
+import ProjectCard from "../components/Projects/ProjectCard";
 import { Contact } from "../components/Contact/contact";
+import { Skills } from "../components/Skills/Skills";
 import { About } from "../components/About/About";
-import { Portafolio } from "../components/Portafolio/Portafolio";
-import {
-  OrageDownWave,
-  OrangeUpWave,
-  PurpleDownWave,
-  PurpleUpWave,
-} from "../components/Waves/waves";
+
+import { usePortfolioData } from "../utils/usePortfolioData";
 
 const IndexPage: NextPage = () => {
-  const [isEnglish, setIsEnglish] = React.useState(true);
+  const { t } = useTranslation("common");
+  const { projects, loading } = usePortfolioData();
+
 
   return (
-    <Layout
-      title="Jorge Ignacio Garay"
-      isEnglish={isEnglish}
-      setIsEnglish={setIsEnglish}
-    >
-      <div className="flex flex-col justify-between">
-        <div className="flex justify-center w-auto h-screen space-x-80 items-center">
-          <h1 className="text-white text-3xl italic">
-            {isEnglish ? "Hi, Im Jorge Ignacio" : "Hola, soy Jorge Ignacio"}{" "}
-            <h2 className="text-white italic text-2xl text-center">
-              {isEnglish ? "a" : "un"} Full Stack Developer
-            </h2>
-          </h1>
-          <img
-            src="https://i.imgur.com/KuVCnhI.png"
-            alt="astronaut"
-            width={500}
-            height={500}
-            className="animate-bounce-slow hover:animate-spin   hue-rotate-15 saturate-150 hidden lg:block "
-          />
+    <Layout title="Jorge Ignacio Garay">
+      <Hero />
+
+      {/* About Section */}
+      <section id="about" className="py-20 relative z-10">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-10 text-transparent bg-clip-text bg-gradient-to-r from-space-cyan to-space-accent">
+            {t("about")}
+          </h2>
+          <div className="bg-space-light/50 backdrop-blur-md p-8 rounded-2xl border border-white/10">
+            <About isEnglish={true} /> {/* TODO: Update About to use i18n internally */}
+          </div>
         </div>
-        <div className="-mt-80">{OrangeUpWave}</div>
-      </div>
-      {/* About */}
-      <div
-        className="bg-orange-800 h-auto py-4 flex flex-col align-middle items-center justify-center"
-        id="about"
-      >
-        <div className="flex justify-center">
-          <h1 className="text-4xl text-white">
-            {isEnglish ? "About me" : "Sobre mí"}
-          </h1>
+      </section>
+
+      {/* Portfolio Section */}
+      <section id="portafolio" className="py-20 relative z-10">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-10 text-transparent bg-clip-text bg-gradient-to-r from-space-cyan to-space-accent">
+            {t("portfolio")}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {loading ? (
+              <p className="text-white text-center col-span-3">Loading projects...</p>
+            ) : (
+              projects.map((project, index) => (
+                <div key={index} className="h-96">
+                  <ProjectCard {...project} />
+                </div>
+              ))
+            )}
+          </div>
         </div>
-        <About isEnglish={isEnglish} />
-      </div>
-      {/* Portafolio */}
-      <div className="sm:mb-40 mb-0">
-        {OrageDownWave}
-        <h1 className="text-4xl text-white text-center mb-0 mt-12">
-          Portafolio
-        </h1>
-      </div>
-      <div
-        className="flex mx-auto ml-40 mr-40 justify-center align-middle items-center"
-        id="portafolio"
-      >
-        <Portafolio />
-      </div>
-      <div>{PurpleUpWave}</div>
-      <div className="bg-indigo-400 h-auto py-4 flex flex-col align-middle items-center justify-center">
-        <div className="flex justify-center" id="skills">
-          {/* Skills */}
-          <h1 className="text-4xl text-white">Skills</h1>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="py-20 relative z-10 bg-space-dark/50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-10 text-transparent bg-clip-text bg-gradient-to-r from-space-cyan to-space-accent">
+            {t("skills")}
+          </h2>
+          <Skills />
         </div>
-        <Skills />
-      </div>
-      {PurpleDownWave}
-      {/* Contact */}
-      <h1 className="text-4xl text-white text-center">
-        {isEnglish ? "Contact" : "Contacto"}
-      </h1>
-      <h3 id="contact">Connect with me:</h3>
-      <Contact />
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 relative z-10">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-space-cyan to-space-accent">
+            {t("contact")}
+          </h2>
+          <h3 className="text-xl text-gray-300 mb-8">{t("connect")}</h3>
+          <Contact />
+        </div>
+      </section>
     </Layout>
   );
+};
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale || "en", ["common"])),
+    },
+  };
 };
 
 export default IndexPage;

@@ -1,162 +1,50 @@
 import React from "react";
 
+const skillsData = [
+  { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+  { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+  { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { name: "Astro", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/astro/astro-original.svg" },
+  {
+    name: "flutter",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg",
+  },
+  { name: "dart", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" },
+  { name: "Nestjs", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" },
+  { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", className: "bg-white rounded-full" },
+  { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+  { name: "Express", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", className: "bg-white rounded-full p-1" },
+  { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+  { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+  { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+  { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", className: "bg-white rounded-full" },
+  { name: "Redux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
+  { name: "GraphQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" },
+  { name: "Material UI", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" },
+  { name: "Sequelize", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sequelize/sequelize-original.svg" },
+];
+
 export const Skills = () => {
   return (
-    <div className="flex mx-auto sm:ml-40 sm:mr-40 mr-12 ml-12 mt-12 justify-center align-middle items-center">
-      <div className="flex flex-wrap justify-center">
-        <div className="mx-5 my-5">
-          <img
-            src="https://github.com/Viozhu/Viozhu.github.io/blob/main/Iconos/javascript%20(1).png?raw=true"
-            width="60"
-            height="60"
-            className="mx-auto pb-2"
-          />
-          <p className="text-center">Javascript</p>
-        </div>
-        <div className="mx-5 my-5">
-          <img
-            src="https://cdn.worldvectorlogo.com/logos/typescript-2.svg"
-            width="60"
-            height="60"
-            className="mx-auto pb-2"
-          />
-          <p className="text-center">TypeSctipt</p>
-        </div>
-        <div className="mx-5 my-5">
-          <img
-            src="https://github.com/Viozhu/Viozhu.github.io/blob/main/Iconos/react.png?raw=true"
-            width="60"
-            height="60"
-            className="mx-auto pb-2"
-          />
-          <p className="text-center">React</p>
-        </div>
-        <div className="mx-5 my-5">
-          <img
-            src="https://github.com/Viozhu/Viozhu.github.io/blob/main/Iconos/redux.png?raw=true"
-            width="60"
-            height="60"
-            className="mx-auto pb-2"
-          />
-          <p className="text-center">Redux</p>
-        </div>
-        <div className="mx-5 my-5">
-          <img
-            src="https://camo.githubusercontent.com/3aa42ee93eafa8f736bac662e8ca536350dad790ba36f2f0cb1783aa2be42f6d/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f6e6578746a732d322e737667"
-            width="100"
-            height="100"
-            className="mx-auto pb-2"
-          />
-          <p className="text-center">NextJS</p>
-        </div>
-        <div className="mx-5 my-5">
-          <img
-            src="https://github.com/Viozhu/Viozhu.github.io/blob/main/Iconos/git.png?raw=true"
-            width="60"
-            height="60"
-            className="mx-auto pb-2"
-          />
-          <p className="text-center">Git</p>
-        </div>
-        <div className="mx-5 my-5">
-          <img
-            src="https://github.com/Viozhu/Viozhu.github.io/blob/main/Iconos/github.png?raw=true"
-            width="60"
-            height="60"
-            className="mx-auto pb-2"
-          />
-          <p className="text-center">Github</p>
-        </div>
-        <div className="mx-5 my-5">
-          <img
-            src="https://github.com/Viozhu/Viozhu.github.io/blob/main/Iconos/adobe-photoshop.png?raw=true"
-            width="60"
-            height="60"
-            className="mx-auto pb-2"
-          />
-          <p className="text-center">Photoshop</p>
-        </div>
-        <div className="mx-5 my-5">
-          <img
-            src="https://github.com/Viozhu/Viozhu.github.io/blob/main/Iconos/nodejs.png?raw=true"
-            width="60"
-            height="60"
-            className="mx-auto pb-2"
-          />
-          <p className="text-center">NodeJs</p>
-        </div>
-        <div className="mx-5 my-5">
-          <img
-            src="https://github.com/Viozhu/Viozhu.github.io/blob/main/Iconos/express.png?raw=true"
-            width="60"
-            height="60"
-            className="mx-auto pb-2"
-          />
-          <p className="text-center">Express</p>
-        </div>
-        <div className="mx-5 my-5">
-          <img
-            src="https://github.com/Viozhu/Viozhu.github.io/blob/main/Iconos/bootstrap.png?raw=true"
-            width="60"
-            height="60"
-            className="mx-auto pb-2"
-          />
-          <p className="text-center">Bootstrap</p>
-        </div>
-        <div className="mx-5 my-5">
-          <img
-            src="https://github.com/Viozhu/Viozhu.github.io/blob/main/Iconos/sequelize.png?raw=true"
-            width="60"
-            height="60"
-            className="mx-auto pb-2"
-          />
-          <p className="text-center">Sequelize</p>
-        </div>
-        <div className="mx-5 my-5">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2048px-Tailwind_CSS_Logo.svg.png"
-            width="60"
-            height="60"
-            className="mx-auto pb-2"
-          />
-          <p className="text-center">Tailwind Css</p>
-        </div>
-        <div className="mx-5 my-5">
-          <img
-            src="https://cdn.worldvectorlogo.com/logos/material-ui-1.svg"
-            width="70"
-            height="60"
-            className="mx-auto pb-2 mt-1"
-          />
-          <p className="text-center">Material UI</p>
-        </div>
-        <div className="mx-5 my-5">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/2048px-GraphQL_Logo.svg.png"
-            width="60"
-            height="60"
-            className="mx-auto pb-2"
-          />
-          <p className="text-center">Graphql</p>
-        </div>
-        <div className="mx-5 my-5">
-          <img
-            src="https://github.com/Viozhu/Viozhu.github.io/blob/main/Iconos/html5.png?raw=true"
-            width="60"
-            height="60"
-            className="mx-auto pb-2"
-          />
-          <p className="text-center">Html</p>
-        </div>
-        <div className="mx-5 my-5">
-          <img
-            src="https://github.com/Viozhu/Viozhu.github.io/blob/main/Iconos/css3.png?raw=true"
-            width="60"
-            height="60"
-            className="mx-auto pb-2"
-          />
-          <p className="text-center">CSS</p>
-        </div>
+    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        {skillsData.map((skill) => (
+          <div
+            key={skill.name}
+            className="group flex flex-col items-center justify-center p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 hover:border-space-cyan/30 transition-all duration-300 hover:-translate-y-1"
+          >
+            <div className="relative w-12 h-12 mb-3 transition-transform duration-300 group-hover:scale-110">
+              <img
+                src={skill.icon}
+                alt={skill.name}
+                className={`w-full h-full object-contain ${skill.className || ''}`}
+              />
+            </div>
+            <p className="text-center text-gray-300 text-sm font-medium group-hover:text-white transition-colors">
+              {skill.name}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );
