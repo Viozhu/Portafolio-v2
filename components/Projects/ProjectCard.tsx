@@ -15,7 +15,7 @@ const ProjectCard = ({ title, description, img, link, techStack = [] }: ProjectC
 
     return (
 
-        <div className="group relative flex flex-col h-full bg-gradient-to-br from-slate-900/90 to-slate-950/90 backdrop-blur-xl border border-slate-700/50 rounded-2xl overflow-hidden shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 hover:border-cyan-500/50">
+        <div className="group relative flex flex-col h-72 bg-gradient-to-br from-slate-900/90 to-slate-950/90 backdrop-blur-xl border border-slate-700/50 rounded-2xl overflow-hidden shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 hover:border-cyan-500/50">
             {/* Animated gradient border effect */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 blur-xl"></div>
@@ -76,35 +76,6 @@ const ProjectCard = ({ title, description, img, link, techStack = [] }: ProjectC
                     </div>
                 )}
 
-                {/* CTA Button */}
-                <a
-                    href={link || '#'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group/btn relative inline-flex items-center justify-center gap-2 w-full text-sm font-bold text-white px-5 py-2.5 rounded-lg overflow-hidden transition-all duration-300 hover:scale-[1.02]"
-                >
-                    {/* Button gradient background */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-purple-600 transition-all duration-300 group-hover/btn:from-cyan-500 group-hover/btn:to-purple-500"></div>
-
-                    {/* Button glow */}
-                    <div className="absolute inset-0 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300">
-                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-400 blur-lg"></div>
-                    </div>
-
-                    {/* Button content */}
-                    <span className="relative z-10 flex items-center gap-2">
-                        <span>View Project</span>
-                        <svg
-                            className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            strokeWidth={2.5}
-                        >
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                    </span>
-                </a>
             </div>
 
             {/* Subtle corner accent */}

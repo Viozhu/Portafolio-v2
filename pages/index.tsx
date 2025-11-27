@@ -28,7 +28,7 @@ const IndexPage: NextPage = () => {
             {t("about")}
           </h2>
           <div className="bg-space-light/50 backdrop-blur-md p-8 rounded-2xl border border-white/10">
-            <About isEnglish={true} /> {/* TODO: Update About to use i18n internally */}
+            <About />
           </div>
         </div>
       </section>

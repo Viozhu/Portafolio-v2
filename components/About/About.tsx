@@ -105,7 +105,10 @@ export const About = ({ }: Props) => {
           {experiences.map((exp, index) => (
             <div key={index} className="relative pl-8 md:pl-12 group">
               {/* Timeline Dot */}
-              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-space-dark border-2 border-space-cyan group-hover:bg-space-cyan group-hover:shadow-[0_0_10px_rgba(6,182,212,0.5)] transition-all duration-300"></div>
+              <div
+                className="absolute top-0 w-4 h-4 rounded-full bg-space-dark border-2 border-space-cyan group-hover:bg-space-cyan group-hover:shadow-[0_0_10px_rgba(6,182,212,0.5)] transition-all duration-300"
+                style={{ left: '-9px' }}
+              ></div>
 
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
                 <h4 className="text-xl font-bold text-white group-hover:text-space-cyan transition-colors">

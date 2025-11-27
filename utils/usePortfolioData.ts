@@ -30,17 +30,17 @@ export const usePortfolioData = () => {
                 const dataArray = parsedData.table.rows.slice(1).map((row: any) => {
                     const img = row.c[0]?.v || '';
                     const title = row.c[1]?.v || '';
-                    // Assuming the sheet only has img and title based on legacy code.
-                    // We can add defaults for other fields to make it work with our new ProjectCard
+                    const description = row.c[2]?.v || '';
+                    const link = row.c[3]?.v || '';
+                    const techStack = row.c[4]?.v || '';
                     return {
                         img,
                         title,
-                        description: '', // Placeholder
-                        link: '#',       // Placeholder
-                        techStack: []    // Placeholder
+                        description,
+                        link,
+                        techStack
                     };
                 });
-
                 setProjects(dataArray);
                 setLoading(false);
             } catch (err) {
