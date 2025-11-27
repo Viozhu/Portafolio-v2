@@ -1,49 +1,16 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
-import axios from "axios";
+import { Experience } from "../../utils/usePortfolioData";
 
 interface Props {
-  isEnglish?: boolean;
+  experiences: Experience[];
 }
 
-interface Experience {
-  company: string;
-  role: string;
-  period: string;
-  type: string;
-  description?: string;
-  skills?: string[];
-}
 
-export const About = ({ }: Props) => {
+
+export const About = ({ experiences }: Props) => {
   const { t } = useTranslation("common");
-  const [experiences, setExperiences] = React.useState<Experience[]>([]);
 
-  React.useEffect(() => {
-    axios
-      .get(
-        "https://docs.google.com/spreadsheets/d/168w2UO0emiLD9TKy00D65mCr5W3B6zz3hhsndK-rMfU/gviz/tq?tqx=out:json"
-      )
-      .then((response) => {
-        const newData = response.data.replace("/*O_o*/", "");
-        const startIdx = newData.indexOf("{"); // Find the starting index of the JSON object
-        const jsonString = newData.substring(startIdx, newData.length - 2); // Extract the JSON object
-
-        const parsedData = JSON.parse(jsonString);
-
-        // Mapear los datos necesarios
-        const dataArray = parsedData.table.rows.slice(1).map((row) => {
-          const company = row.c[9]?.v || "";
-          const role = row.c[10]?.v || "";
-          const period = row.c[11]?.v || "";
-          const type = row.c[12]?.v || "";
-          const description = row.c[13]?.v || "";
-          return { company, role, period, type, description };
-        }).filter((exp) => exp.company !== "");
-
-        setExperiences(dataArray);
-      });
-  }, []);
 
 
 

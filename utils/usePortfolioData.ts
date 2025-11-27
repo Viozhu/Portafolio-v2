@@ -4,13 +4,23 @@ import axios from 'axios';
 export interface Project {
     img: string;
     title: string;
-    description?: string; // Google Sheet might not have this, but good to have in interface
-    link?: string;        // Google Sheet might not have this
-    techStack?: string[]; // Google Sheet might not have this
+    description?: string;
+    link?: string;
+    techStack?: string[];
+}
+
+export interface Experience {
+    company: string;
+    role: string;
+    period: string;
+    type: string;
+    description?: string;
+    skills?: string[];
 }
 
 export const usePortfolioData = () => {
     const [projects, setProjects] = useState<Project[]>([]);
+    const [experiences, setExperiences] = useState<Experience[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -27,7 +37,7 @@ export const usePortfolioData = () => {
                 const jsonString = newData.substring(startIdx, newData.length - 2);
                 const parsedData = JSON.parse(jsonString);
 
-                const dataArray = parsedData.table.rows.slice(1).map((row: any) => {
+                const projectsArray = parsedData.table.rows.slice(1).map((row: any) => {
                     const img = row.c[1]?.v || '';
                     const title = row.c[2]?.v || '';
                     const description = row.c[3]?.v || '';
@@ -41,7 +51,24 @@ export const usePortfolioData = () => {
                         techStack
                     };
                 }).filter((pro) => pro.title !== "");
-                setProjects(dataArray);
+
+                const experiencesArray = parsedData.table.rows.slice(1).map((row: any) => {
+                    const company = row.c[10]?.v || '';
+                    const role = row.c[11]?.v || '';
+                    const period = row.c[12]?.v || '';
+                    const type = row.c[13]?.v || '';
+                    const description = row.c[14]?.v || '';
+                    return {
+                        company,
+                        role,
+                        period,
+                        type,
+                        description
+                    };
+                }).filter((exp) => exp.company !== "");
+
+                setExperiences(experiencesArray);
+                setProjects(projectsArray);
                 setLoading(false);
             } catch (err) {
                 console.error("Error fetching portfolio data:", err);
@@ -53,5 +80,5 @@ export const usePortfolioData = () => {
         fetchData();
     }, []);
 
-    return { projects, loading, error };
+    return { projects, experiences, loading, error };
 };

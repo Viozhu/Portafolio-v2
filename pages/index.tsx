@@ -14,7 +14,7 @@ import { usePortfolioData } from "../utils/usePortfolioData";
 
 const IndexPage: NextPage = () => {
   const { t } = useTranslation("common");
-  const { projects, loading } = usePortfolioData();
+  const { projects, experiences, loading } = usePortfolioData();
 
 
   return (
@@ -28,7 +28,7 @@ const IndexPage: NextPage = () => {
             {t("about")}
           </h2>
           <div className="bg-space-light/50 backdrop-blur-md p-8 rounded-2xl border border-white/10">
-            <About />
+            <About experiences={experiences} />
           </div>
         </div>
       </section>
