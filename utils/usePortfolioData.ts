@@ -40,7 +40,7 @@ export const usePortfolioData = () => {
                         link,
                         techStack
                     };
-                });
+                }).filter((pro) => pro.title !== "");
                 setProjects(dataArray);
                 setLoading(false);
             } catch (err) {

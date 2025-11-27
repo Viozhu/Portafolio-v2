@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
+import axios from "axios";
 
 interface Props {
   isEnglish?: boolean;
@@ -16,65 +17,35 @@ interface Experience {
 
 export const About = ({ }: Props) => {
   const { t } = useTranslation("common");
+  const [experiences, setExperiences] = React.useState<Experience[]>([]);
 
-  const experiences: Experience[] = [
-    {
-      company: "Utomata",
-      role: "Engineering Manager",
-      period: "Sept 2024 - Present",
-      type: "Part-time",
-      description: "Improving with AI",
-    },
-    {
-      company: "Zifrado",
-      role: "Engineering Manager",
-      period: "Sept 2023 - Present",
-      type: "Part-time",
-      description: "Remote",
-    },
-    {
-      company: "Fireflux",
-      role: "Front-end Developer",
-      period: "Sept 2023 - Jul 2025",
-      type: "Full-time",
-      description: "Remote",
-    },
-    {
-      company: "Academia Numen",
-      role: "Teaching Assistant",
-      period: "Apr 2022 - Apr 2024",
-      type: "Part-time",
-      description: "Remote",
-    },
-    {
-      company: "iVoy",
-      role: "Full Stack Developer",
-      period: "Dec 2021 - Jun 2023",
-      type: "Full-time",
-      description: "Problem solving, JS, and 8 more skills",
-    },
-    {
-      company: "Lilab",
-      role: "Front-end Developer",
-      period: "Jul 2021 - Dec 2021",
-      type: "Full-time",
-      description: "Problem solving, JS, and 7 more skills",
-    },
-    {
-      company: "Henry",
-      role: "Teaching Assistant",
-      period: "Apr 2021 - Jul 2021",
-      type: "Internship",
-      description: "Helping students understand fundamental technologies.",
-    },
-    {
-      company: "Be your Own Chef",
-      role: "Full Stack Developer",
-      period: "Apr 2021",
-      type: "Project",
-      description: "SPA Development (React, Redux, Node.js, Sequelize)",
-    },
-  ];
+  React.useEffect(() => {
+    axios
+      .get(
+        "https://docs.google.com/spreadsheets/d/168w2UO0emiLD9TKy00D65mCr5W3B6zz3hhsndK-rMfU/gviz/tq?tqx=out:json"
+      )
+      .then((response) => {
+        const newData = response.data.replace("/*O_o*/", "");
+        const startIdx = newData.indexOf("{"); // Find the starting index of the JSON object
+        const jsonString = newData.substring(startIdx, newData.length - 2); // Extract the JSON object
+
+        const parsedData = JSON.parse(jsonString);
+
+        // Mapear los datos necesarios
+        const dataArray = parsedData.table.rows.slice(1).map((row) => {
+          const company = row.c[9]?.v || "";
+          const role = row.c[10]?.v || "";
+          const period = row.c[11]?.v || "";
+          const type = row.c[12]?.v || "";
+          const description = row.c[13]?.v || "";
+          return { company, role, period, type, description };
+        }).filter((exp) => exp.company !== "");
+
+        setExperiences(dataArray);
+      });
+  }, []);
+
+
 
   return (
     <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-24">

@@ -23,7 +23,6 @@ export const Portafolio = () => {
           const title = row.c[1].v;
           return { img, title };
         });
-
         setProyects(dataArray);
       });
   }, []);
