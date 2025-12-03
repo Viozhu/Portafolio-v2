@@ -9,7 +9,7 @@ interface ProjectCardProps {
     techStack?: string[];
 }
 
-const ProjectCard = ({ title, description, img, techStack = [] }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, img, link, techStack = [] }: ProjectCardProps) => {
     const [imageError, setImageError] = React.useState(false);
     const [imageLoaded, setImageLoaded] = React.useState(false);
 
@@ -59,7 +59,7 @@ const ProjectCard = ({ title, description, img, techStack = [] }: ProjectCardPro
 
                 {/* Tech Stack */}
                 {techStack.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mb-5">
+                    <div className="flex flex-wrap gap-2 mb-4">
                         {techStack.slice(0, 4).map((tech) => (
                             <span
                                 key={tech}
@@ -74,6 +74,32 @@ const ProjectCard = ({ title, description, img, techStack = [] }: ProjectCardPro
                             </span>
                         )}
                     </div>
+                )}
+
+                {/* Visit Website Button */}
+                {link && link.trim() !== '' && (
+                    <a
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-auto inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg hover:from-cyan-400 hover:to-purple-400 transition-all duration-300 shadow-lg hover:shadow-cyan-500/50 border border-cyan-500/30 hover:border-cyan-400/50"
+                    >
+                        Visit Website
+                        <svg
+                            className="ml-2 w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                            />
+                        </svg>
+                    </a>
                 )}
 
             </div>
