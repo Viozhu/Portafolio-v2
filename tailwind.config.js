@@ -14,6 +14,7 @@ module.exports = {
       animation: {
         'spin-slow': 'spin 20s linear infinite',
         'float': 'float 6s ease-in-out infinite',
+        'fade-in': 'fadeIn 0.2s ease-in-out forwards',
       },
       keyframes: {
         float: {

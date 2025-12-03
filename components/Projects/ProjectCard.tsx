@@ -1,18 +1,21 @@
 
 import React from 'react';
-
+import { useTranslation } from 'next-i18next';
 interface ProjectCardProps {
     title: string;
-    description?: string;
+    descriptionEs?: string;
+    descriptionEn?: string;
+    descriptionKr?: string;
     img: string;
     link?: string;
     techStack?: string[];
 }
 
-const ProjectCard = ({ title, description, img, link, techStack = [] }: ProjectCardProps) => {
+const ProjectCard = ({ title, descriptionEs, descriptionEn, descriptionKr, img, link, techStack = [] }: ProjectCardProps) => {
     const [imageError, setImageError] = React.useState(false);
     const [imageLoaded, setImageLoaded] = React.useState(false);
-
+    const { i18n } = useTranslation();
+    const currentLanguage = i18n.language;
     return (
 
         <div className="group relative flex flex-col h-72 bg-gradient-to-br from-slate-900/90 to-slate-950/90 backdrop-blur-xl border border-slate-700/50 rounded-2xl overflow-hidden shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 hover:border-cyan-500/50">
@@ -54,7 +57,7 @@ const ProjectCard = ({ title, description, img, link, techStack = [] }: ProjectC
 
                 {/* Description */}
                 <p className="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-2 flex-grow">
-                    {description || "An innovative project showcasing modern development practices."}
+                        {currentLanguage === 'es' ? descriptionEs : currentLanguage === 'en' ? descriptionEn : descriptionKr}
                 </p>
 
                 {/* Tech Stack */}

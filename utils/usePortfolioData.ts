@@ -40,13 +40,17 @@ export const usePortfolioData = () => {
                 const projectsArray = parsedData.table.rows.slice(1).map((row: any) => {
                     const img = row.c[1]?.v || '';
                     const title = row.c[2]?.v || '';
-                    const description = row.c[3]?.v || '';
-                    const link = row.c[4]?.v || '';
-                    const techStack = row.c[5]?.v || '';
+                    const descriptionEs = row.c[3]?.v || '';
+                    const descriptionEn = row.c[4]?.v || '';
+                    const descriptionKr = row.c[5]?.v || '';
+                    const link = row.c[6]?.v || '';
+                    const techStack = row.c[7]?.v || '';
                     return {
                         img,
                         title,
-                        description,
+                        descriptionEs,
+                        descriptionEn,
+                        descriptionKr,
                         link,
                         techStack
                     };
